@@ -29,6 +29,8 @@ SPHERON_ACCESS_TOKEN=
 
 Spin up local environment (hot reloading included):
 
+_Port set to 3001_
+
 ```
 # for nest app
 npm run start:dev
@@ -37,7 +39,7 @@ npm run start:dev
 
 Example cURL to query endpoint locally:
 ```
-curl --location 'localhost:3000/uploadToken/test-bucket'
+curl --location 'localhost:3001/uploadToken/test-bucket'
 ```
 
 Build Docker Container for running locally on MacOS:

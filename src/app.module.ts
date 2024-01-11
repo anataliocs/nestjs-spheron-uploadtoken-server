@@ -1,5 +1,5 @@
 import {Module} from '@nestjs/common';
-import {UploadTokenModule} from './opensea/uploadTokenModule';
+import {UploadTokenModule} from './uploadtoken/uploadTokenModule';
 import {ConfigModule, ConfigService} from '@nestjs/config';
 
 @Module({

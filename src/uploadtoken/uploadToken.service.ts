@@ -12,8 +12,6 @@ export class UploadTokenService {
     private readonly httpService: HttpService
   ) {}
 
-
-
   async getUploadToken(bucketName: string): Promise<UploadRes> {
 
       const protocol = ProtocolEnum.IPFS;
