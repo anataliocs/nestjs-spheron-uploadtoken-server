@@ -3,7 +3,7 @@ import { Inject, Injectable } from '@nestjs/common';
 import {AxiosHeaders, RawAxiosRequestHeaders} from "axios";
 import {AxiosRequestConfig} from "axios/index";
 import * as process from "process";
-import {UploadToken} from "./dto/UploadToken";
+import {UploadRes} from "./dto/UploadRes";
 import { SpheronClient, ProtocolEnum } from "@spheron/storage";
 
 @Injectable()
@@ -12,7 +12,9 @@ export class UploadTokenService {
     private readonly httpService: HttpService
   ) {}
 
-  async getUploadToken(bucketName: string): Promise<string> {
+
+
+  async getUploadToken(bucketName: string): Promise<UploadRes> {
 
       const protocol = ProtocolEnum.IPFS;
 
@@ -20,11 +22,9 @@ export class UploadTokenService {
           token: process.env.SPHERON_ACCESS_TOKEN,
       });
 
-      const { uploadToken } = await client.createSingleUploadToken({
-          name: bucketName,
-          protocol,
-      });
-
-    return uploadToken;
+    return await client.createSingleUploadToken({
+        name: bucketName,
+        protocol,
+    });
   }
 }

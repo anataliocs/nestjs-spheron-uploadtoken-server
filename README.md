@@ -35,6 +35,11 @@ npm run start:dev
 
 ```
 
+Example cURL to query endpoint locally:
+```
+curl --location 'localhost:3000/uploadToken/test-bucket'
+```
+
 Build Docker Container for running locally on MacOS:
 ```
 docker build --platform linux/arm64 -t nestjs-spheron-uploadtoken-server .
